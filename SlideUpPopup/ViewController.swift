@@ -9,6 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let animator = PopAnimator()
+
+    @IBAction func show(_ sender: Any) {
+      let popup = self.storyboard?.instantiateViewController(withIdentifier: "SlideViewController")
+      popup?.modalPresentationStyle = .custom
+      popup?.transitioningDelegate = self
+      self.present(popup!, animated: true, completion: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +29,16 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
 }
 
+extension ViewController: UIViewControllerTransitioningDelegate {
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return animator
+    }
+
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        return ViewPresenter(presentedViewController: presented, presenting: presenting)
+    }
+
+}

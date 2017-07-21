@@ -12,6 +12,14 @@
 		AFC372DA1F2087AC009B7F33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFC372D81F2087AC009B7F33 /* Main.storyboard */; };
 		AFC372DC1F2087AC009B7F33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFC372DB1F2087AC009B7F33 /* Assets.xcassets */; };
 		AFC372DF1F2087AC009B7F33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFC372DD1F2087AC009B7F33 /* LaunchScreen.storyboard */; };
+		AFC372E91F209868009B7F33 /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC372E81F209868009B7F33 /* PopAnimator.swift */; };
+		AFC372EB1F209CB8009B7F33 /* ViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC372EA1F209CB8009B7F33 /* ViewPresenter.swift */; };
+		AFC372ED1F20B0A1009B7F33 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC372EC1F20B0A1009B7F33 /* PopUpViewController.swift */; };
+		AFC372EF1F20B2EB009B7F33 /* DialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC372EE1F20B2EB009B7F33 /* DialogViewController.swift */; };
+		AFC372F11F20B446009B7F33 /* DialogAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC372F01F20B446009B7F33 /* DialogAnimator.swift */; };
+		AFC372F31F20B4C0009B7F33 /* DialogPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC372F21F20B4C0009B7F33 /* DialogPresenter.swift */; };
+		AFC372F51F20BFA8009B7F33 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC372F41F20BFA8009B7F33 /* MenuViewController.swift */; };
+		AFC372F71F20C06B009B7F33 /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC372F61F20C06B009B7F33 /* SlideViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +30,14 @@
 		AFC372DB1F2087AC009B7F33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AFC372DE1F2087AC009B7F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFC372E01F2087AC009B7F33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFC372E81F209868009B7F33 /* PopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
+		AFC372EA1F209CB8009B7F33 /* ViewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPresenter.swift; sourceTree = "<group>"; };
+		AFC372EC1F20B0A1009B7F33 /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		AFC372EE1F20B2EB009B7F33 /* DialogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogViewController.swift; sourceTree = "<group>"; };
+		AFC372F01F20B446009B7F33 /* DialogAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogAnimator.swift; sourceTree = "<group>"; };
+		AFC372F21F20B4C0009B7F33 /* DialogPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogPresenter.swift; sourceTree = "<group>"; };
+		AFC372F41F20BFA8009B7F33 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		AFC372F61F20C06B009B7F33 /* SlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +76,14 @@
 				AFC372DB1F2087AC009B7F33 /* Assets.xcassets */,
 				AFC372DD1F2087AC009B7F33 /* LaunchScreen.storyboard */,
 				AFC372E01F2087AC009B7F33 /* Info.plist */,
+				AFC372E81F209868009B7F33 /* PopAnimator.swift */,
+				AFC372EA1F209CB8009B7F33 /* ViewPresenter.swift */,
+				AFC372EC1F20B0A1009B7F33 /* PopUpViewController.swift */,
+				AFC372EE1F20B2EB009B7F33 /* DialogViewController.swift */,
+				AFC372F01F20B446009B7F33 /* DialogAnimator.swift */,
+				AFC372F21F20B4C0009B7F33 /* DialogPresenter.swift */,
+				AFC372F41F20BFA8009B7F33 /* MenuViewController.swift */,
+				AFC372F61F20C06B009B7F33 /* SlideViewController.swift */,
 			);
 			path = SlideUpPopup;
 			sourceTree = "<group>";
@@ -137,8 +161,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFC372F31F20B4C0009B7F33 /* DialogPresenter.swift in Sources */,
+				AFC372ED1F20B0A1009B7F33 /* PopUpViewController.swift in Sources */,
+				AFC372F11F20B446009B7F33 /* DialogAnimator.swift in Sources */,
 				AFC372D71F2087AC009B7F33 /* ViewController.swift in Sources */,
+				AFC372F51F20BFA8009B7F33 /* MenuViewController.swift in Sources */,
+				AFC372EF1F20B2EB009B7F33 /* DialogViewController.swift in Sources */,
+				AFC372F71F20C06B009B7F33 /* SlideViewController.swift in Sources */,
+				AFC372E91F209868009B7F33 /* PopAnimator.swift in Sources */,
 				AFC372D51F2087AC009B7F33 /* AppDelegate.swift in Sources */,
+				AFC372EB1F209CB8009B7F33 /* ViewPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DfU-pt-YyR">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="SlideUpPopup" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,184 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Aw-cK-heK">
+                                <rect key="frame" x="168" y="60" width="38" height="30"/>
+                                <state key="normal" title="Show"/>
+                                <connections>
+                                    <action selector="show:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0sy-KE-U82"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1Aw-cK-heK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="G2i-lT-dva"/>
+                            <constraint firstItem="1Aw-cK-heK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Y0j-SD-9dd"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="MG4-o8-oal">
+            <objects>
+                <viewController storyboardIdentifier="MenuViewController" id="0bs-eX-tFT" customClass="MenuViewController" customModule="SlideUpPopup" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NCO-WD-TeB"/>
+                        <viewControllerLayoutGuide type="bottom" id="3oB-eT-Apl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="l3C-1X-qDh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Owv-y2-lDL">
+                                <rect key="frame" x="160.5" y="104" width="54" height="30"/>
+                                <state key="normal" title="SlideUp"/>
+                                <connections>
+                                    <action selector="showSlideUp:" destination="0bs-eX-tFT" eventType="touchUpInside" id="T4W-XC-nM9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gH-TQ-sPH">
+                                <rect key="frame" x="152.5" y="164" width="70" height="30"/>
+                                <state key="normal" title="PopDialog"/>
+                                <connections>
+                                    <action selector="showDialog:" destination="0bs-eX-tFT" eventType="touchUpInside" id="Vsc-eR-s0g"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Owv-y2-lDL" firstAttribute="centerX" secondItem="l3C-1X-qDh" secondAttribute="centerX" id="0hc-n1-ipE"/>
+                            <constraint firstItem="Owv-y2-lDL" firstAttribute="top" secondItem="NCO-WD-TeB" secondAttribute="bottom" constant="40" id="41L-MI-Tur"/>
+                            <constraint firstItem="8gH-TQ-sPH" firstAttribute="top" secondItem="Owv-y2-lDL" secondAttribute="bottom" constant="30" id="8aE-SN-B0f"/>
+                            <constraint firstItem="8gH-TQ-sPH" firstAttribute="centerX" secondItem="Owv-y2-lDL" secondAttribute="centerX" id="RCF-p1-Q25"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="AJ4-WP-L4z"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VNE-Lk-qBV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1292" y="-218.1409295352324"/>
+        </scene>
+        <!--Slide View Controller-->
+        <scene sceneID="a9O-cI-h5F">
+            <objects>
+                <viewController storyboardIdentifier="SlideViewController" id="Daf-HX-7tu" customClass="SlideViewController" customModule="SlideUpPopup" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Iay-ff-kNq"/>
+                        <viewControllerLayoutGuide type="bottom" id="dta-9V-3cX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AQh-5S-fdJ">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aH5-Ho-MfU">
+                                <rect key="frame" x="231" y="30" width="59" height="30"/>
+                                <state key="normal" title="dissmiss">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismiss:" destination="Daf-HX-7tu" eventType="touchUpInside" id="L2L-j5-xGV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92407947779999999" green="0.1108545437" blue="0.13942053909999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aH5-Ho-MfU" firstAttribute="top" secondItem="Iay-ff-kNq" secondAttribute="bottom" constant="10" id="Wlj-OU-ug7"/>
+                            <constraint firstAttribute="trailing" secondItem="aH5-Ho-MfU" secondAttribute="trailing" constant="10" id="hdq-XV-knh"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="200"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Ev-H4-71C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2024" y="74.662668665667169"/>
+        </scene>
+        <!--Pop Up View Controller-->
+        <scene sceneID="Wnn-fQ-B83">
+            <objects>
+                <viewController storyboardIdentifier="PopUpViewController" id="zgA-GG-J0D" customClass="PopUpViewController" customModule="SlideUpPopup" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gog-rI-Jw0"/>
+                        <viewControllerLayoutGuide type="bottom" id="lbD-Wa-nfW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xqu-AD-Wn2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJY-6X-QZp">
+                                <rect key="frame" x="168" y="318.5" width="38" height="30"/>
+                                <state key="normal" title="Show"/>
+                                <connections>
+                                    <action selector="show:" destination="zgA-GG-J0D" eventType="touchUpInside" id="KmV-Yb-Yz4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FJY-6X-QZp" firstAttribute="centerY" secondItem="Xqu-AD-Wn2" secondAttribute="centerY" id="Qli-d7-HP7"/>
+                            <constraint firstItem="FJY-6X-QZp" firstAttribute="centerX" secondItem="Xqu-AD-Wn2" secondAttribute="centerX" id="dyb-ME-Y5g"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ShowDialog" destination="FJY-6X-QZp" id="3an-NR-Ghm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aAY-FW-GlJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1463" y="521"/>
+        </scene>
+        <!--Dialog View Controller-->
+        <scene sceneID="1QZ-15-Z1O">
+            <objects>
+                <viewController storyboardIdentifier="DialogViewController" id="FaS-yv-Y4l" customClass="DialogViewController" customModule="SlideUpPopup" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OTF-0W-Uyy"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cr3-oZ-Y6Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jAN-rK-r77">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi, There" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7TC-kb-n89">
+                                <rect key="frame" x="115" y="140" width="70" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="7TC-kb-n89" firstAttribute="centerX" secondItem="jAN-rK-r77" secondAttribute="centerX" id="XpG-3w-RHS"/>
+                            <constraint firstItem="7TC-kb-n89" firstAttribute="centerY" secondItem="jAN-rK-r77" secondAttribute="centerY" id="fTP-Zt-4qA"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="300"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="igA-5e-3FV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2134.4000000000001" y="541.52923538230891"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6c5-ug-yFV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DfU-pt-YyR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xko-lJ-9lA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0bs-eX-tFT" kind="relationship" relationship="rootViewController" id="cot-OP-Jwa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W73-KD-DYP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="352.80000000000001" y="-218.1409295352324"/>
         </scene>
     </scenes>
 </document>
