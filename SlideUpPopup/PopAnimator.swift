@@ -13,6 +13,8 @@ class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     var duration = 0.6
     
     var initialFrame = CGRect.zero
+    
+    var presenting = true
 
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
 
@@ -28,10 +30,12 @@ class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         
         //let transform = CGAffineTransform(scaleX: initialFrame.size.width / finalFrame!.size.width, y: initialFrame.size.height / finalFrame!.size.height)
         
-        redView?.transform = CGAffineTransform(translationX: 0 , y: 200)
+        redView?.transform =   presenting ?  CGAffineTransform(translationX: 0 , y: 200) :  CGAffineTransform(translationX: 0 , y: 0)
         redView?.clipsToBounds = true
-        containerView.addSubview(redView!)
         
+        if presenting {
+           containerView.addSubview(redView!)
+        }
         //redView?.center = CGPoint(x: initialFrame.midX, y: initialFrame.maxY)
         
         //redView!.alpha = 0.0
@@ -42,12 +46,11 @@ class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 //              transitionContext.completeTransition(true)
 //        }
         UIView.animate(withDuration: duration, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, options: [], animations: {
-            redView?.transform = CGAffineTransform.identity
+            redView?.transform =   self.presenting ?  CGAffineTransform.identity : CGAffineTransform(translationX: 0 , y: 200)
         }) { _ in
             transitionContext.completeTransition(true)
         }
-        
-        
+
     }
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
